@@ -7,7 +7,7 @@ const cors = require('cors');
 const fileUpload = require('express-fileupload');
 
 const PORT = process.env.PORT || 6000;
-const DB_URL = ``;
+const DB_URL = process.env.MONGO_URL;
 
 const app = express();
 app.use(cors());
