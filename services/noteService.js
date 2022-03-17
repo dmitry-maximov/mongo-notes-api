@@ -1,9 +1,10 @@
-const note = require('../models/note');
 const Note = require('../models/note');
+const FileService = require('./fileService');
 
 class NoteService {
-  async create(note) {
-    const createdNote = await Note.create(note);
+  async create(note, picture) {
+    const fileName = FileService.saveFile(picture);
+    const createdNote = await Note.create({ ...note, picture: fileName });
     return createdNote;
   }
 
@@ -13,14 +14,12 @@ class NoteService {
   }
 
   async getOne(id) {
-    const note = await note.find(id);
+    const note = await Note.findById(id);
     return note;
   }
 
   async update(note) {
-    if (!note._id) throw new Error('Id не указан');
-
-    const updatedNote = await Note.findOneAndUpdate(note._id, note, {
+    const updatedNote = await Note.findByIdAndUpdate(note._id, note, {
       new: true,
     });
     return updatedNote;
@@ -32,4 +31,4 @@ class NoteService {
   }
 }
 
-module.export = new NoteService();
+module.exports = new NoteService();

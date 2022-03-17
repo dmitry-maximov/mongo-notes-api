@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "897b7275-e95b-44a4-aa83-9fec938cc2ee",
+		"name": "mongo-notes-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "author",
+							"value": "Test",
+							"type": "default"
+						},
+						{
+							"key": "title",
+							"value": "Title",
+							"type": "default"
+						},
+						{
+							"key": "content",
+							"value": "12344hsjf hsjfh",
+							"type": "default"
+						},
+						{
+							"key": "picture",
+							"type": "file",
+							"src": "/C:/Users/WorkHorse/Downloads/MongoDB_Logo.svg.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/notes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/notes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOne",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/notes/62336adb3afb9f8423f1ebfc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"notes",
+						"62336adb3afb9f8423f1ebfc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/notes/62336adb3afb9f8423f1ebfc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"notes",
+						"62336adb3afb9f8423f1ebfc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"_id\": \"62336cdf804c6162d86e647b\",\r\n        \"author\": \"Test123\",\r\n        \"title\": \"Title\",\r\n        \"content\": \"12344hsjf hsjfh\",\r\n        \"picture\": \"dd0cb8fd-3d91-489e-899d-bedfdf83a7da.jpeg\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/notes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "static",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/60e592af-584d-452a-9b24-cf5729e480ac.jpeg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"60e592af-584d-452a-9b24-cf5729e480ac.jpeg"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
